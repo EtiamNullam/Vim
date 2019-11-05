@@ -957,7 +957,8 @@ class MoveToLineFromViewPortBottom extends MoveByScreenLine {
     vimState: VimState,
     count: number
   ): Promise<Position | IMovement> {
-    this.value = count < 1 ? 1 : count;
+    this.value = (count < 1 ? 1 : count) + 1;
+
     return this.execAction(position, vimState);
   }
 }
